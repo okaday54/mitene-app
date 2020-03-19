@@ -1,3 +1,31 @@
 * {
   box-sizing: border-box;
 }
+
+  .header{
+    height: 150px;
+    width: 100%;
+    background-color: red;
+    .wrapper1{
+      height: 50px;
+      background-color: green;
+    }
+    .nav-bar{
+      height: 50px;
+      background-color: gray;
+      .ul{
+        display: flex;
+      }
+    }
+  }
+
+  .container{
+    height: 600px;
+    width: 100%;
+    background-color: blue;
+  }
+.footer{
+  height: 100px;
+  width: 100%;
+  background-color: black;
+}
