@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
@@ -28,12 +27,13 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+        format.html { redirect_to root_path }
+        # format.html { redirect_to @posts, notice: 'Post was successfully created.' }
+    #     format.json { render :show, status: :created, location: @post }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @post.errors, status: :unprocessable_entity }
+       end
     end
   end
 
@@ -68,9 +68,8 @@ class PostsController < ApplicationController
     end
 
 
-
     # Only allow a list of trusted parameters through.
     def post_params
-      params.fetch(:post, {}).require(:post).permit(:image, :comment)
+      params.require(:post).permit(:image)
     end
 end

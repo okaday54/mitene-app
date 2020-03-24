@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.header{
+  height: 150px;
+  width: 100%;
+  background-color: #F7F6EB;
+  .wrapper1{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    .logo{
+      display: flex;
+      align-items: center;
+    }
+    .login{
+      position: absolute;
+      right: 30px;
+    }
+  }
+  .nav{
+    height: 100px;
+    .nav-bar{
+      height:50px;
+      background-color:#D8D6D5;
+      ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+          li{
+            float: left;
+            padding:0 10px;
+            line-height: 50px;
+          }
+      }
+    }
+  }
+}
+
+.container{
+  height: 600px;
+  width: 100%;
+  background-color: #F6FBF6;
+  .content_post{
+    height: 50px;
+    width: 70px;
+    background-color: red;
+  }
+}
+.footer{
+  height: 100px;
+  width: 100%;
+  background-color: black;
+  position: relative;
+  .copyright{
+    color: white;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
