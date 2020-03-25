@@ -3,45 +3,35 @@
     .logo
       = image_tag "mitene-logo.png", width:'120px', height:'50px'
       .login
-        = link_to "ログイン", new_user_session_path
-        = link_to "新規登録", new_user_registration_path 
+        - if user_signed_in?
+          .login-now
+            = current_user.username
+            
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
+            = link_to  "投稿する", new_post_path
+        - else
+          .login-not
+            = link_to "ログイン", new_user_session_path, class: 'post'
+            = link_to "新規登録", new_user_registration_path, class: 'post'
   .nav
     .nav-bar
       %ul
         %li<
-          ホーム
+          = link_to "ホーム", root_path
         %li<
           近況
         %li<
           設定
     .nav-bar_2
-      = link_to 'New Post', new_post_path
       
 .container
-  -# - @tweets.each do |post|
-  -#   .content_post{:style => "background-image: url(#{tweet.image});"}
-  -#     %span.name
-  -#       = tweet.name
-
-  -# .follower
-  -#   .hide-on-overlay-id
-  -#     .media-thumbnail
-  -#       .media-thumbnail_container
-  -#         .media-thumbnail_box
-  -#           .with-icon
-  -#             .media-img
-  -#             .bottom-icon_comment
-  -#   .hide-on-overlay
-  -#     .pagination
-  -#       .prev
-  -#         .disabled
-  -#       .next
-  -#         .follower-paging-next-link
+  .media-thumbnails
+    - @posts.each do |post|
+      .content_post{style: "background-image: url(#{post.image});"} 
+  = paginate(@posts)
 .footer
   .copyright
     Copyright (C) mixi, Inc. All rights reserved.
-
-
 
 
 -# carriewwaveインストールしたら生成された

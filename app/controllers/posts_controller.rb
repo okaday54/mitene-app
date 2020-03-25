@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
+  
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC").page(params[:page]).per(18)
   end
 
   # GET /posts/1
@@ -23,11 +24,12 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    Tweet.create(tweet_params)
+    Post.create(post_params)
+    redirect_to root_path
   end
   private
-  def tweet_params
-    params.require(:tweet).permit(:name, :image)
+  def post_params
+    params.require(:post).permit(:image)
   end
 end
 

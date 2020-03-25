@@ -41,20 +41,35 @@
 }
 
 .container{
-  height: 600px;
-  width: 100%;
   background-color: #F6FBF6;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow:hidden;
+  
+  .media-thumbnails{
+  }
   .content_post{
-    height: 480px;
-    width: 600px;
+    height: 150px;
+    width: 150px;
     border: solid 5px;
+    background-size: cover;
+    display: block;
+    float: left;
+    padding: 5px;
+    border: 1px #e5e5e5 solid;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    
   }
 }
 .footer{
-  height: 100px;
+  height: 30px;
   width: 100%;
-  background-color: black;
+  background-color: gray;
   position: relative;
+  // position: absolute;
+  // bottom: 0;
   .copyright{
     color: white;
     font-size: 11px;
@@ -64,3 +79,4 @@
     bottom: 0;
   }
 }
+
