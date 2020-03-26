@@ -10,6 +10,9 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
   end
 
   # GET /posts/new
@@ -19,6 +22,9 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    post = Post.find(params[:id])
+    post.edit(post_params)
+    redirect_to post_path(post.id)
   end
 
   # POST /posts
@@ -29,7 +35,7 @@ class PostsController < ApplicationController
   end
   private
   def post_params
-    params.require(:post).permit(:image)
+    params.require(:post).permit(:image, :comment)
   end
 end
 

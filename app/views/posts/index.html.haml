@@ -6,7 +6,6 @@
         - if user_signed_in?
           .login-now
             = current_user.username
-            
             = link_to "ログアウト", destroy_user_session_path, method: :delete
             = link_to  "投稿する", new_post_path
         - else
@@ -23,11 +22,11 @@
         %li<
           設定
     .nav-bar_2
-      
 .container
   .media-thumbnails
     - @posts.each do |post|
-      .content_post{style: "background-image: url(#{post.image});"} 
+      .content_post{style: "background-image: url(#{post.image});"}
+        = link_to "詳細", "/posts/#{post.id}"
   = paginate(@posts)
 .footer
   .copyright
