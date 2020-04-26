@@ -36,8 +36,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
+gem 'devise_invitable'
 gem 'carrierwave'
 gem 'haml-rails'
+gem 'erb2haml'
 gem 'kaminari'
 gem 'devise_invitable'
 
