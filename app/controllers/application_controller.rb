@@ -5,9 +5,8 @@ class ApplicationController < ActionController::Base
   protected
 
     def configure_permitted_parameters
-
-      devise_parameter_sanitizer.for(:invite) << :username
-      devise_parameter_sanitizer.for(:accept_invitation) << :username
+      devise_parameter_sanitizer.for(:invite) { |u| u.permit(:email, :username) }
+      devise_parameter_sanitizer.for(:accept_invitation) { |u| u.permit(:password, :password_confirmation, :invitation_token, :username) }
     end
 
   

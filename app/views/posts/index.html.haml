@@ -3,6 +3,7 @@
     .logo
       = image_tag "mitene-logo.png", width:'120px', height:'50px'
       .login
+        = link_to "招待", new_user_invitation_path 
         - if user_signed_in?
           .login-now
             = current_user.username
