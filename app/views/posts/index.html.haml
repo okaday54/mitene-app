@@ -25,8 +25,12 @@
 .container
   .media-thumbnails
     - @posts.each do |post|
-      .content_post{style: "background-image: url(#{post.image});"}
-        = link_to "詳細", "/posts/#{post.id}"
+      #modal-open
+        .content_post{style: "background-image: url(#{post.image});"}
+
+      #modal-mask
+      #modal-content{style: "background-image: url(#{post.image});"}
+      #close
   = paginate(@posts)
 .footer
   .copyright
