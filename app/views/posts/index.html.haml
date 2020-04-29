@@ -25,11 +25,9 @@
 .container
   .media-thumbnails
     - @posts.each do |post|
-      #modal-open
-        .content_post{style: "background-image: url(#{post.image});"}
-
-      #modal-mask
-      #modal-content{style: "background-image: url(#{post.image});"}
+      #modal_open.content_post{style: "background-image: url(#{post.image});"}
+      #mask.aaa
+      #modal_content.aaa{style: "background-image: url(#{post.image});"}
       #close
   = paginate(@posts)
 .footer
