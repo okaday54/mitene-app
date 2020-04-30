@@ -1,6 +1,7 @@
 'use strict';
 
 $(function(){
+  
   const modal_open = document.getElementById('modal_open');
   const mask = document.getElementById('mask');
   const modal_content = document.getElementById('modal_content');

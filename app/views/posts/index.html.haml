@@ -24,7 +24,7 @@
     .nav-bar_2
 .container
   .media-thumbnails
-    - @posts.each do |post|
+    - @posts.each_with_index do |post, index|
       #modal_open.content_post{style: "background-image: url(#{post.image});"}
       #mask.aaa
       #modal_content.aaa{style: "background-image: url(#{post.image});"}
