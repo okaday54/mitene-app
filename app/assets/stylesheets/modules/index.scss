@@ -4,38 +4,50 @@
 }
 
 .header{
-  height: 150px;
+  height: 50px;
   width: 100%;
   background-color: #F7F6EB;
-  .wrapper1{
-    height: 50px;
-    width: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  .logo{
     display: flex;
     align-items: center;
-    .logo{
-      display: flex;
-      align-items: center;
-    }
-    .login{
-      position: absolute;
-      right: 30px;
+  }
+  .login{
+    position: absolute;
+    right: 30px;
+  }
+}
+.nav{
+  height: 100px;
+  width: 100%;
+  .nav-menu{
+    height:50px;
+    background-color:#F6F5F6;
+    ul{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+        li{
+          float: left;
+          padding:0 10px;
+          line-height: 50px;
+        }
     }
   }
-  .nav{
-    height: 100px;
-    .nav-bar{
-      height:50px;
-      background-color:#D8D6D5;
-      ul{
-        margin: 0;
-        padding: 0;
-        list-style: none;
-          li{
-            float: left;
-            padding:0 10px;
-            line-height: 50px;
-          }
-      }
+  .nav-month{
+    height: 50px;
+    background-color: #f1faee;
+    ul{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+        li{
+          float: left;
+          padding:0 10px;
+          line-height: 50px;
+        }
     }
   }
 }
@@ -43,6 +55,7 @@
 .container{
   background-color: #F6FBF6;
   max-width: 90%;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   overflow:hidden;
@@ -108,4 +121,13 @@
 }
 #modal_content.aaa{
   display: none;
+}
+
+.logo-icon{
+  width: 100px;
+  height: 50px;
+  .fa-images:before{
+    width: 100px;
+    height: 50px;
+  }
 }

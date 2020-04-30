@@ -1,27 +1,39 @@
 .header
-  .wrapper1
-    .logo
-      = image_tag "mitene-logo.png", width:'120px', height:'50px'
-      .login
-        - if user_signed_in?
-          .login-now
-            = current_user.username
-            = link_to "ログアウト", destroy_user_session_path, method: :delete
-            = link_to  "投稿する", new_post_path
-        - else
-          .login-not
-            = link_to "ログイン", new_user_session_path, class: 'post'
-            = link_to "新規登録", new_user_registration_path, class: 'post'
-  .nav
-    .nav-bar
-      %ul
-        %li<
-          = link_to "ホーム", root_path
-        %li<
-          近況
-        %li<
-          設定
-    .nav-bar_2
+  .logo
+    = image_tag "mitene-logo.png", width:'120px', height:'50px'
+    .login
+      - if user_signed_in?
+        .login-now
+          = current_user.username
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
+          = link_to  "投稿する", new_post_path
+      - else
+        .login-not
+          = link_to "ログイン", new_user_session_path, class: 'post'
+          = link_to "新規登録", new_user_registration_path, class: 'post'
+.nav
+  .nav-menu
+    %ul
+      %li<
+        = link_to "ホーム", root_path
+      %li<
+        近況
+      %li<
+        設定
+  .nav-month
+    %ul
+      %li 5月
+      %li 4月
+      %li 3月
+      %li 2月
+      %li 1月
+      %li 12月
+      %li 11月
+      %li 10月
+      %li 9月
+      %li 8月
+      %li 7月
+      %li 6月
 .container
   .media-thumbnails
     - @posts.each_with_index do |post, index|
