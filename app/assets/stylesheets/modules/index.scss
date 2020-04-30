@@ -79,3 +79,33 @@
   }
 }
 
+#modal_open{
+  cursor: pointer;
+}
+
+#mask{
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+#mask.aaa{
+  display: none;
+}
+
+#modal_content{
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+#modal_content.aaa{
+  display: none;
+}
