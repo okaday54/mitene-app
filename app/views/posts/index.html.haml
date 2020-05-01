@@ -34,31 +34,22 @@
       %li 8月
       %li 7月
       %li 6月
+.pickup-container
+  .box1
+  .box2
+  .box3
+
 .container
   .media-thumbnails
     - @posts.each_with_index do |post, index|
-      #modal_open.content_post{style: "background-image: url(#{post.image});"}
-      #mask.aaa
-      #modal_content.aaa{style: "background-image: url(#{post.image});"}
-      #close
+      .content_post{style: "background-image: url(#{post.image});"}
+        = link_to "詳細", "/posts/#{post.id}"
   = paginate(@posts)
+
 .footer
   .copyright
     Copyright (C) mixi, Inc. All rights reserved.
 
 
--# carriewwaveインストールしたら生成された
--# %p#notice= notice
--#   %table
--#     %thead
--#       %tr
--#         %th{:colspan => "3"}
--#     %tbody
--#  - @posts.each do |post|
--#     %tr
--#       %td= link_to 'Show', post
--#       %td= link_to 'Edit', edit_post_path(post)
--#       %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
--#   %br/
--#   = link_to 'New Post', new_post_path
+
   
