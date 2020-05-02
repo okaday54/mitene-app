@@ -1,6 +1,7 @@
 .header
   .logo
-    = image_tag "mitene-logo.png", width:'120px', height:'50px'
+    = link_to root_path do
+      = image_tag "mitene-logo.png", width:'120px', height:'50px'
     .login
       - if user_signed_in?
         .login-now
@@ -15,11 +16,11 @@
   .nav-menu
     %ul
       %li<
-        = link_to "ホーム", root_path
+        = link_to "マイページ", user_path(current_user)
       %li<
-        近況
+        コメント一覧
       %li<
-        設定
+        招待ユーザー
   .nav-month
     %ul
       %li 5月
