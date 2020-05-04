@@ -1,0 +1,14 @@
+%h1 about me
+= link_to "編集", edit_user_registration_path
+
+%h3 ユーザー名
+= @user.username
+
+%h3 メールアドレス
+= @user.email
+%br/
+%br/
+.user-icon
+  %h3 ユーザーアイコン
+  = image_tag @user.avatar
+

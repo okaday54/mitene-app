@@ -1,24 +1,40 @@
 * {
   box-sizing: border-box;
   font-family: sans-serif;
+  font-feature-settings: "palt";
+  outline: none;
 }
 
 .header{
-  height: 50px;
+  height: 60px;
   width: 100%;
-  background-color: #F7F6EB;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  .logo{
-    display: flex;
-    align-items: center;
+  background-color: orange;
+  padding: 0 50px;
+  position: relative;
+  &__logo{
+    position: relative;
+    img{
+      position: absolute;
+    }
   }
-  .login{
-    position: absolute;
-    right: 30px;
+  &__lists{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    margin-left: auto;
+    &--list {
+      padding-left: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      color: white;      
+    }
   }
 }
+
+
 .nav{
   height: 100px;
   width: 100%;
@@ -105,14 +121,13 @@
   height: 30px;
   width: 100%;
   background-color: gray;
-  position: relative;
+  position: fixed;
   .copyright{
     color: white;
     font-size: 11px;
     letter-spacing: 0.05em;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+    text-align: center;
+    line-height: 30px;
   }
 }
 

@@ -1,17 +1,64 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.wrapper-devise
+  .header2
+    = link_to root_path do
+      = image_tag 'mitene-logo.png', width:'155px', height:'59px'
+    .container
+      .container__main
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .field
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "top-input"
+          .field
+            = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード"
+          - if devise_mapping.rememberable?
+            .field{ class: 'hidden' }
+              = f.check_box :remember_me, checked: "checked"
+              = f.label :remember_me
+          .actions{ class: 'loginBtn' }
+            = f.submit "ログイン"
+        .container__main__devise
+          - if devise_mapping.registerable? && controller_name != 'registrations'
+            = link_to "新規登録", new_registration_path(resource_name)
+            %br/
+          - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+            = link_to "パスワードの再発行", new_password_path(resource_name)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-# %h2 Log in
+-# = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+-#   .field
+-#     = f.label :email
+-#     %br/
+-#     = f.email_field :email, autofocus: true, autocomplete: "email"
+-#   .field
+-#     = f.label :password
+-#     %br/
+-#     = f.password_field :password, autocomplete: "current-password"
+-#   - if devise_mapping.rememberable?
+-#     .field
+-#       = f.check_box :remember_me
+-#       = f.label :remember_me
+-#   .actions
+-#     = f.submit "Log in"
+-# = render "devise/shared/links"
