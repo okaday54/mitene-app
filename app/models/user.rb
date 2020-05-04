@@ -6,5 +6,7 @@ class User < ApplicationRecord
   validates :username, presence: true
 
   has_many :comments
+  has_one_attached :avatar
+  
   # devise :invitable
 end

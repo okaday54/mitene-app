@@ -1,17 +1,22 @@
 .header
-  .logo
-    = link_to root_path do
+  .header__logo
+    = link_to posts_path do
       = image_tag "mitene-logo.png", width:'120px', height:'50px'
-    .login
-      - if user_signed_in?
-        .login-now
+  .header__lists
+    - if user_signed_in?
+      .header__lists--list
+        = link_to user_path(current_user) do
           = current_user.username
-          = link_to "ログアウト", destroy_user_session_path, method: :delete
-          = link_to  "投稿する", new_post_path
-      - else
-        .login-not
-          = link_to "ログイン", new_user_session_path, class: 'post'
-          = link_to "新規登録", new_user_registration_path, class: 'post'
+      .header__lists--list
+        = link_to  "投稿する", new_post_path
+      .header__lists--list
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
+    -# - else
+    -#   .header__lists--list
+    -#     = link_to "ログイン", new_user_session_path, class: 'post'
+    -#   .header__lists--list
+    -#     = link_to "新規登録", new_user_registration_path, class: 'post'
+
 .nav
   .nav-menu
     %ul
@@ -49,7 +54,7 @@
 
 .footer
   .copyright
-    Copyright (C) mixi, Inc. All rights reserved.
+    mitene - family album
 
 
 

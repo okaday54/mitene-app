@@ -1,5 +1,15 @@
 class UsersController < ApplicationController
-  def show
-    @user = current_user
+
+  def index
+    @user = User.find(params[:id])
   end
+
+  def show
+    @user = User.find(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(:username, :avatar)
+  end
+
 end

@@ -3,6 +3,14 @@
 @import "modules/new-post";
 @import "devise";
 @import "devise-login";
-
+@import "users";
 
 @import 'font-awesome';
+
+
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-feature-settings: "palt";
+  outline: none;
+}
