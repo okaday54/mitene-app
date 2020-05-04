@@ -10,4 +10,5 @@
 %br/
 .user-icon
   %h3 ユーザーアイコン
-  = image_tag(rails_blob_path(@user.avatar))
+  = image_tag @user.avatar
+
