@@ -1,62 +1,57 @@
-.header
-  .header__logo
-    = link_to posts_path do
-      = image_tag "mitene-logo.png", width:'120px', height:'50px'
-    = image_tag @user.avatar
-  .header__lists
-    - if user_signed_in?
-      .header__lists--list
-        = link_to user_path(current_user) do
-          = current_user.username
-      .header__lists--list
-        = link_to  "投稿する", new_post_path
-      .header__lists--list
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
-    -# - else
-    -#   .header__lists--list
-    -#     = link_to "ログイン", new_user_session_path, class: 'post'
-    -#   .header__lists--list
-    -#     = link_to "新規登録", new_user_registration_path, class: 'post'
+#wrapper  
+  .header
+    .header__logo
+      = link_to posts_path do
+        = image_tag "mitene-logo.png", width:'120px', height:'50px'
+    .header__lists
+      - if user_signed_in?
+        .header__lists--list
+          = link_to user_path(current_user) do
+            = current_user.username
+        .header__lists--list
+          = link_to  "投稿する", new_post_path
+        .header__lists--list
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
+      -# - else
+      -#   .header__lists--list
+      -#     = link_to "ログイン", new_user_session_path, class: 'post'
+      -#   .header__lists--list
+      -#     = link_to "新規登録", new_user_registration_path, class: 'post'
 
-.nav
-  .nav-menu
-    %ul
-      %li<
-        = link_to "マイページ", user_path(current_user)
-      %li<
-        最新コメント
-      %li<
-        招待ユーザー
-  .nav-month
-    %ul
-      %li 5月
-      %li 4月
-      %li 3月
-      %li 2月
-      %li 1月
-      %li 12月
-      %li 11月
-      %li 10月
-      %li 9月
-      %li 8月
-      %li 7月
-      %li 6月
-.pickup-container
-  .box1
-  .box2
-  .box3
+  .nav
+    .nav-menu
+      %ul
+        %li<
+          = link_to "マイページ", user_path(current_user)
+        %li<
+          最新コメント
+        %li<
+          招待ユーザー
+    .nav-month
+      %ul
+        %li 5月
+        %li 4月
+        %li 3月
+        %li 2月
+        %li 1月
+        %li 12月
+        %li 11月
+        %li 10月
+        %li 9月
+        %li 8月
+        %li 7月
+        %li 6月
 
-.container
-  .media-thumbnails
+  .container-post
     - @posts.each_with_index do |post, index|
-      .content_post{style: "background-image: url(#{post.image});"}
-        = link_to "詳細", "/posts/#{post.id}"
+      .content-post
+        = link_to image_tag("#{post.image}", class: "img"), post_path(post.id), class: "img"
   = paginate(@posts)
 
-.footer
-  .copyright
-    mitene - family album
+  .footer
+    .copyright
+      mitene - family album
 
 
 
-  
+    
