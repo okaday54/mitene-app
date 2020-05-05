@@ -1,0 +1,36 @@
+.return{
+  position: relative;top: 0;
+  z-index: 1;
+}
+
+#show-wrapper{
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.show-main{
+  background-color: white;
+  height: 700px;
+  width: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .show-post{
+    background-color: blue;
+    width: 600px;
+    height: 600px;
+  }
+  .show-comment{
+    background-color:red;
+    width: 300px;
+    height: 600px;
+  }
+}

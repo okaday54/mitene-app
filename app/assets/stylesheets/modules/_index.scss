@@ -9,6 +9,7 @@
   width: 100%;
   background-color: orange;
   padding: 0 50px;
+  position: fixed;
   position: relative;
   &__logo{
     position: relative;
@@ -67,20 +68,19 @@
   }
 }
 
-.container-post{
-  max-width: 980px;
+.content{
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
-  .content-post{
+  .content__post{
     display: block;
     float: left;
     padding: 5px;
     border: 1px #e5e5e5 solid;
-    margin-right: 30px;
-    margin-bottom: 30px;
+    margin: 5px 5px;
     img{
-      width: 200px;
-      height: 200px;
+      width: 190px;
+      height: 190px;
     }
   }
 }
