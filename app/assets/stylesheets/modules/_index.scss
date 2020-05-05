@@ -4,37 +4,6 @@
     min-height: 100vh;
 }
 
-.header{
-  height: 60px;
-  width: 100%;
-  background-color: orange;
-  padding: 0 50px;
-  position: fixed;
-  position: relative;
-  &__logo{
-    position: relative;
-    img{
-      position: absolute;
-    }
-  }
-  &__lists{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 30%;
-    height: 100%;
-    margin-left: auto;
-    &--list {
-      padding-left: 20px;
-      font-size: 16px;
-      font-weight: bold;
-      text-decoration: none;
-      color: white;      
-    }
-  }
-}
-
-
 .nav{
   height: 100px;
   width: 100%;
@@ -84,23 +53,6 @@
     }
   }
 }
-
-
-
-.footer{
-  height: 30px;
-  width: 100%;
-  background-color: gray;
-  margin-top: auto;
-  .copyright{
-    color: white;
-    font-size: 11px;
-    letter-spacing: 0.05em;
-    text-align: center;
-    line-height: 30px;
-  }
-}
-
 
 
 // #modal_open{

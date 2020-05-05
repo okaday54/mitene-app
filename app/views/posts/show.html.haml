@@ -1,27 +1,31 @@
-.return
-  = link_to "<TOPに戻る>", root_path
-#show-wrapper
+.header
+  = render partial: "layouts/header"
+#show-mask
   .show-main  
     .show-post
       .content-post{:style => "background-image: url(#{@post.image});"}
     .show-comment
       .comments
-      %h4 ＜コメント一覧＞
       - if @comments
         - @comments.each do |comment|
           %p
             %strong
               = link_to comment.user.username, "/users/#{comment.user_id}"
-              ：
-            = comment.text
-            
-      - if current_user
-        = form_with(model: [@post, @comment], local: true) do |form|
-          = form.text_area :text, placeholder: "コメントする", rows: "2"
-          = form.submit "SEND"
-      - else
-        %strong
-          %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+            %br/
+            .comments__text
+              = comment.text
+      
+      .comment-form
+        %hr.cp_hr02/
+        - if current_user
+          = form_with(model: [@post, @comment], local: true) do |form|
+            = form.text_area :text, placeholder: "コメントする", rows: "2"
+            = form.submit "SEND",{ id:"send-btn" }
+        - else
+          %strong
+            %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+.footer
+  = render partial: "layouts/footer"
 
 
 

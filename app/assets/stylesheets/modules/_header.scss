@@ -1,0 +1,29 @@
+.header{
+  height: 60px;
+  width: 100%;
+  background-color: orange;
+  padding: 0 50px;
+  position: fixed;
+  position: relative;
+  &__logo{
+    position: relative;
+    img{
+      position: absolute;
+    }
+  }
+  &__lists{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    margin-left: auto;
+    &--list {
+      padding-left: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      color: white;      
+    }
+  }
+}

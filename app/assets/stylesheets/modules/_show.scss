@@ -1,15 +1,5 @@
-.return{
-  position: relative;top: 0;
-  z-index: 1;
-}
-
-#show-wrapper{
+#show-mask{
   background: rgba(0, 0, 0, 0.4);
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,20 +7,66 @@
 
 
 .show-main{
-  background-color: white;
   height: 700px;
   width: 900px;
   display: flex;
   justify-content: center;
   align-items: center;
+
   .show-post{
-    background-color: blue;
+    background-color: white;
+    border: solid 0.5px gray;
     width: 600px;
     height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .content-post{
+      width: 550px;
+      height: 550px;
+    }
   }
   .show-comment{
-    background-color:red;
+    background-color: white;
+    border: solid 0.5px gray;
     width: 300px;
     height: 600px;
+    position: relative;
+    .comments, a{
+        margin: 15px;
+      &__text{
+        width: 90%;
+        background-color: #e6e6e6;
+        padding: 5px;
+        border-radius: 4px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    .comment-form{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      form, input, textarea {
+        width: 100%;
+        padding: 5px;
+        resize: none;
+      }
+      #send-btn{
+        
+        border-radius: 4px;
+        color: #fff;
+        background-color: rgb(59,203,205);
+      }
+    }
   }
+}
+
+.cp_hr02 {
+	border-width: 1px 0 0 0;
+	border-style: dashed;
+  border-color: gray;
+  margin-bottom: 5px;
 }
