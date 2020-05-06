@@ -71,7 +71,7 @@ group :development, :test do
   gem 'capistrano3-unicorn'
 end
 
-gem 'mini_racer', platforms: :ruby
+gem 'execjs'
 
 gem 'pry-rails'
 gem 'haml-rails'
