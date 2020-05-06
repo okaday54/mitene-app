@@ -5,10 +5,10 @@
   .header__lists
     - if user_signed_in?
       .header__lists--list
+        = link_to  "投稿する", new_post_path
+      .header__lists--list
         = link_to user_path(current_user) do
           = current_user.username
-      .header__lists--list
-        = link_to  "投稿する", new_post_path
       .header__lists--list
         = link_to "ログアウト", destroy_user_session_path, method: :delete
     -# - else

@@ -15,7 +15,6 @@
 
   .show-post{
     background-color: white;
-    border: solid 0.5px gray;
     width: 600px;
     height: 600px;
     display: flex;
@@ -28,7 +27,6 @@
   }
   .show-comment{
     background-color: white;
-    border: solid 0.5px gray;
     width: 300px;
     height: 600px;
     position: relative;
@@ -45,7 +43,7 @@
     }
     .comment-form{
       position: absolute;
-      bottom: 0;
+      bottom: 20px;
       width: 100%;
       margin-left: auto;
       margin-right: auto;
@@ -55,7 +53,6 @@
         resize: none;
       }
       #send-btn{
-        
         border-radius: 4px;
         color: #fff;
         background-color: rgb(59,203,205);

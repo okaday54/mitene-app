@@ -16,7 +16,6 @@
               = comment.text
       
       .comment-form
-        %hr.cp_hr02/
         - if current_user
           = form_with(model: [@post, @comment], local: true) do |form|
             = form.text_area :text, placeholder: "コメントする", rows: "2"
