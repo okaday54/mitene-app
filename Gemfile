@@ -64,14 +64,18 @@ group :development, :test do
   gem 'capistrano3-unicorn'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
+
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'kaminari'
 gem 'devise_invitable'
 gem 'font-awesome-sass'
-gem 'aws-sdk-s3', require: false
 
+gem 'aws-sdk-s3', require: false
 gem 'mini_racer', platforms: :ruby
 
 gem 'pry-rails'
