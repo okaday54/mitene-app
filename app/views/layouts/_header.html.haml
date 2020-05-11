@@ -1,11 +1,11 @@
 .header
   .header__logo
     = link_to posts_path do
-      = image_tag "mitene-logo.png", width:'120px', height:'50px'
+      = image_tag "logo.png", width:'120px', height:'50px'
   .header__lists
     - if user_signed_in?
       .header__lists--list
-        = link_to  "招待", new_user_invitation
+        = link_to  "招待", new_user_invitation_path
       .header__lists--list
         = link_to  "投稿する", new_post_path
       .header__lists--list
