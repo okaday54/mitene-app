@@ -1,3 +1,10 @@
+#wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
 #show-mask{
   background: rgba(0, 0, 0, 0.4);
   display: flex;

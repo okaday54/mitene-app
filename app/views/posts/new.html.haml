@@ -1,4 +1,11 @@
-.new-title
-  %h1 新規みてねの投稿
-  = render 'form', post: @post
-  = link_to 'Back', posts_path
+#wrapper
+  .header
+    = render partial: "layouts/header"
+
+  .new-title
+    %h1 新規みてねの投稿
+    = render 'form', post: @post
+    = link_to 'Back', posts_path
+
+  .footer
+    = render partial: "layouts/footer"

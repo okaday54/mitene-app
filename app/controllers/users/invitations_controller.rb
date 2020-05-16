@@ -1,4 +1,4 @@
-class Users::InvitationsController < ApplicationController
+class Users::InvitationsController < Devise::InvitationsController
   def new
     super
   end

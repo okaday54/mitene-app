@@ -1,16 +1,19 @@
-.header
-  = render partial: "layouts/header"
-%br/
-%br/
-= link_to "編集", edit_user_registration_path
+#wrapper
+  .header
+    = render partial: "layouts/header"
+  %br/
+  %br/
+  = link_to "編集", edit_user_registration_path
 
-%h3 ユーザー名
-= @user.username
+  %h3 ユーザー名
+  = @user.username
 
-%h3 メールアドレス
-= @user.email
-%br/
-%br/
-.user-icon
-  %h3 ユーザーアイコン
+  %h3 メールアドレス
+  = @user.email
+  %br/
+  %br/
+  .user-icon
+    %h3 ユーザーアイコン
 
+  .footer
+    = render partial: "layouts/footer"

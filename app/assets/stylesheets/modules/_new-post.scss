@@ -1,6 +1,7 @@
-* {
-  box-sizing: border-box;
-  font-family: sans-serif;
+#wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .new-title{
