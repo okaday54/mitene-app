@@ -5,6 +5,8 @@
 https://mitene-app.herokuapp.com/
 
 ## テストユーザー
+メールアドレス： test@com
+パスワード： 111111
 
 # 概要
 - ユーザー登録
